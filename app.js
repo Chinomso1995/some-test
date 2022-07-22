@@ -1,10 +1,30 @@
 const mobileMenuToggler = document.querySelector('.hamburger-menu')
 const mobileMenu = document.querySelector('.mobile-menu')
 
+const desktopPlayIcon = document.querySelector('.play-icon');
+const mobilePlayIcon = document.querySelector('.mobile-play-icon')
+const video = document.querySelector('.video-to-play')
+
+const form = document.querySelector('form')
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  location.assign("./thank-you/thank-you.html")
+})
+
 
 mobileMenuToggler.addEventListener("click", function(){ 
     mobileMenu.classList.toggle("mobile-menu-active");
 });
+
+desktopPlayIcon.addEventListener("click", function(){ 
+  video.paused ? video.play() : video.pause();
+});
+
+mobilePlayIcon.addEventListener("click", function(){ 
+  video.paused ? video.play() : video.pause();
+});
+
 
 
 

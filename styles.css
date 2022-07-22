@@ -15,6 +15,11 @@ p{
     margin: 0px;
 }
 
+option{
+    background-color: black;
+    color: white;
+}
+
 .nav-section{
     background-image: url("./images/nav-background-image.png");
     position: relative;
