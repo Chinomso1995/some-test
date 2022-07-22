@@ -26,7 +26,22 @@ mobilePlayIcon.addEventListener("click", function(){
 });
 
 
+(async () => {
+  const response = await fetch('https://restcountries.com/v3.1/all');
+  const countries = await response.json();
 
+  let size = 20
+  let trimmedCountries = countries.slice(0, size)
+
+
+  const select = document.getElementById('country');
+  for (const country of trimmedCountries) {
+      const option = document.createElement('option');
+      option.value = country.name.official;
+      option.innerText = country.name.official;
+      select.appendChild(option);
+  }
+})();
 
 function navigation(slider) {
     let wrapper, dots, arrowLeft, arrowRight
